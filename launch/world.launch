@@ -1,0 +1,22 @@
+<!--
+Author: Lucas Schmirl mr22m015
+functions and logic from http://wiki.ros.org/Documentation and own previous projects
+ROS is licensed under an open source, BSD license.
+-->
+
+
+<launch>
+
+<arg name="file" default="file"/>
+
+<!-- Create gazebo world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find world_to_map)/$(arg file)"/>
+        <arg name="paused" value="false"/>
+        <arg name="use_sim_time" value="true"/>
+        <arg name="gui" value="false"/>
+        <arg name="headless" value="false"/>
+        <arg name="debug" value="false"/>
+    </include>
+
+</launch>
